@@ -1,0 +1,53 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to right, #ff8c00, #002bb8 40%); /* Make nice gradient background */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Header */
+
+header {
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+    margin-top: 50px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 64px;
+}
+
+header h2 {
+    margin: 0;
+    margin-left: 65%; /* Move text to the right by 65% */
+    color: gold;
+    font-family: 'Times New Roman', Times, serif; /* Make text stand out* */
+    font-size: 32px;
+}
+
+/* Search bar */
+
+.search-bar {
+    margin-top: 20px; /* Adjust the spacing between h2 and the search bar */
+}
+
+.search-bar input {
+    padding: 8px;
+    border: none;
+    border-radius: 4px;
+}
+
+.search-bar button {
+    padding: 8px 16px;
+    background-color: #fff;
+    border: none;
+    border-radius: 4px;
+    margin-left: 8px; /* Adjust the spacing between input and button */
+    cursor: pointer;
+}
