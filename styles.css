@@ -103,6 +103,7 @@ header h2 {
 .planet {
     border-radius: 50%;
     /* Make it a circle by setting border radius to 50% */
+    cursor: pointer;
 }
 
 /* Mercury */
@@ -213,6 +214,13 @@ header h2 {
 
 .selected-planet--open {
     display: block;
+}
+
+.selected-planet__close {
+    color: white;
+    font-size: 24px;
+    margin: 24px;
+    cursor: pointer;
 }
 
 /* Info */
