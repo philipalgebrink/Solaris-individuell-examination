@@ -33,7 +33,7 @@ function openPlanetByName(name) {
         console.log("found body:", foundBody);
         openFoundPlanet(foundBody)
     } else {
-        alert("no body found for this name");
+        alert("Finns ingen planet med detta namn");
     }
 }
 
