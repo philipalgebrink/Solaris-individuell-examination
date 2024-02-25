@@ -158,7 +158,50 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
-console.log("bodies before start:", bodies);
 start();
-console.log("bodies efter start:", bodies);
 
+/* Star canvas */
+
+const canvas = document.getElementById('starCanvas');
+const ctx = canvas.getContext('2d');
+const width = window.innerWidth;
+const height = window.innerHeight;
+canvas.width = width;
+canvas.height = height;
+
+const numStars = 200;
+
+function drawStar(x, y, radius, color) {
+    ctx.beginPath();
+    ctx.arc(x, y, radius, 0, Math.PI * 2, false);
+    ctx.fillStyle = color;
+    ctx.fill();
+    ctx.closePath();
+}
+
+function generateRandomCoordinates() {
+    const x = Math.random() * width;
+    const y = Math.random() * height;
+    return { x, y };
+}
+
+function generateRandomRadius() {
+    return Math.random() * 2;
+}
+
+function generateRandomColor() {
+    const shades = ['white', 'rgba(255, 255, 255, 0.8)', 'rgba(255, 255, 255, 0.6)'];
+    const randomIndex = Math.floor(Math.random() * shades.length);
+    return shades[randomIndex];
+}
+
+function createStarField() {
+    for (let i = 0; i < numStars; i++) {
+        const { x, y } = generateRandomCoordinates();
+        const radius = generateRandomRadius();
+        const color = generateRandomColor();
+        drawStar(x, y, radius, color);
+    }
+}
+
+createStarField();

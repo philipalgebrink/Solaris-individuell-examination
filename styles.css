@@ -20,6 +20,14 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    overflow: hidden;
+}
+
+canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none;
 }
 
 /* Header */
@@ -77,6 +85,8 @@ header h2 {
     /* Use flexbox to create a horizontal row */
     align-items: center;
     /* Center items vertically within the flex container */
+    z-index: 1;
+    /* Ensure planets are on top of stars */
 }
 
 /* Variabel for default gap between planets (to make it easier for myself) */
@@ -220,6 +230,8 @@ header h2 {
     width: 100%;
     height: 100%;
     background: linear-gradient(to right, #00249b, #300088 40%);
+    z-index: 2;
+    /* Ensure info page is above planets */
 }
 
 .selected-planet--open {
@@ -306,4 +318,6 @@ p {
     padding: 5px;
     border-radius: 5px;
     pointer-events: none;
+    z-index: 2;
+    /* To ensure tooltip is above planet */
 }
