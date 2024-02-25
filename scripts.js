@@ -2,7 +2,7 @@ let bodies = null;
 const input = document.getElementById("search-bar-input");
 
 async function start() {
-    // Get API key
+    /* Get API key */
     const response = await fetch('https://n5n3eiyjb0.execute-api.eu-north-1.amazonaws.com/bodies', {
         method: 'GET',
         headers: { 'x-zocom': 'solaris-2ngXkR6S02ijFrTP' }
@@ -77,13 +77,13 @@ function openFoundPlanet(body) {
     const selectedPlanetMoonsElement = selectedPlanetElement.querySelector(".selected-planet__moons");
 
     if (planetMoons.length > 0) {
-        // Create a list element
+        /* Create a list element */
         const moonsList = document.createElement("ul");
 
-        // Remove dots so it looks cleaner
+        /* Remove dots so it looks cleaner */
         moonsList.style.listStyleType = "none";
 
-        // Loop through the array and make a listitem for each moon
+        /* Loop through the array and make a listitem for each moon */
         planetMoons.forEach(moon => {
             const listItem = document.createElement("li");
             listItem.textContent = moon;
@@ -94,18 +94,18 @@ function openFoundPlanet(body) {
             moonsList.appendChild(listItem);
         });
 
-        // Add moon to list
+        /* Add list to html */
         selectedPlanetMoonsElement.innerHTML = "";
         selectedPlanetMoonsElement.appendChild(moonsList);
 
-        // Remove padding so it aligns good with header
+        /* Remove padding so it aligns good with header */
         moonsList.style.padding = "0";
 
-        // Show the moons
+        /* Show the moons */
         selectedPlanetElement.querySelector(".selected-planet_moonsheader").style.display = "block";
         selectedPlanetMoonsElement.style.display = "block";
     } else {
-        // Hide moons if no moons exist (hide whole header)
+        /* Hide moons if no moons exist (hide whole header) */
         selectedPlanetElement.querySelector(".selected-planet_moonsheader").style.display = "none";
         selectedPlanetMoonsElement.style.display = "none";
     }
@@ -125,6 +125,33 @@ input.addEventListener("keypress", function (event) {
         event.preventDefault();
         searchForBody();
     }
+});
+
+/* Hover effect */
+
+document.addEventListener("DOMContentLoaded", function () {
+    const planets = document.querySelectorAll(".planet");
+
+    planets.forEach(planet => {
+        const planetName = planet.id;
+
+        planet.addEventListener("mouseover", function (event) {
+            const tooltip = document.createElement("div");
+            tooltip.className = "planet-tooltip";
+            tooltip.textContent = planetName;
+
+            /* Position the tooltip directly on the cursor */
+            tooltip.style.top = event.clientY + "px";
+            tooltip.style.left = event.clientX + "px";
+
+            document.body.appendChild(tooltip);
+
+            /* Add an event listener to remove the tooltip when the mouse leaves the planet, it never disappared before when hovering on new planet */
+            planet.addEventListener("mouseout", function () {
+                document.body.removeChild(tooltip);
+            });
+        });
+    });
 });
 
 console.log("bodies before start:", bodies);
