@@ -1,8 +1,21 @@
+html {
+    width: 100%;
+    height: 100%;
+}
+
+.popup-open {
+    overflow: hidden;
+}
+
 body {
+    width: 100%;
+    height: 100%;
+    position: relative;
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background: linear-gradient(to right, #ff8c00, #000a2b 40%); /* Make nice gradient background */
+    background: linear-gradient(to right, #ff8c00, #000a2b 40%);
+    /* Make nice gradient background */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -25,16 +38,19 @@ header h1 {
 
 header h2 {
     margin: 0;
-    margin-left: 65%; /* Move text to the right by 65% */
+    margin-left: 65%;
+    /* Move text to the right by 65% */
     color: gold;
-    font-family: 'Times New Roman', Times, serif; /* Make text stand out* */
+    font-family: 'Times New Roman', Times, serif;
+    /* Make text stand out* */
     font-size: 32px;
 }
 
 /* Search bar */
 
 .search-bar {
-    margin-top: 20px; /* Adjust the spacing between h2 and the search bar */
+    margin-top: 20px;
+    /* Adjust the spacing between h2 and the search bar */
 }
 
 .search-bar input {
@@ -48,7 +64,8 @@ header h2 {
     background-color: #fff;
     border: none;
     border-radius: 4px;
-    margin-left: 8px; /* Adjust the spacing between input and button */
+    margin-left: 8px;
+    /* Adjust the spacing between input and button */
     cursor: pointer;
 }
 
@@ -56,84 +73,208 @@ header h2 {
 
 .solar-system {
     width: 100%;
-    display: flex; /* Use flexbox to create a horizontal row */
-    align-items: center; /* Center items vertically within the flex container */
+    display: flex;
+    /* Use flexbox to create a horizontal row */
+    align-items: center;
+    /* Center items vertically within the flex container */
 }
+
+/* Variabel for default gap between planets (to make it easier for myself) */
+:root {
+    --gap: 150px;
+}
+
 /* Sun */
 #sun {
     width: 500px;
     height: 500px;
     background-color: yellow;
-    border-radius: 50%; /* Make it a circle by setting border radius to 50% */
-    margin-left: -425px; /* Move the sun outside the left boundary */
-    margin-right: 100px; /* Gap between sun and planet after */
+    border-radius: 50%;
+    /* Make it a circle by setting border radius to 50% */
+    margin-left: -425px;
+    /* Move the sun outside the left boundary */
+    margin-right: calc(var(--gap) + 0px);
+    /* Gap between sun and planet after */
 }
+
+/* TO DO!!!! Position them nicely, try to get jupiter in the middle */
 
 /* Style for other planets */
 .planet {
-    border-radius: 50%; /* Make it a circle by setting border radius to 50% */
+    border-radius: 50%;
+    /* Make it a circle by setting border radius to 50% */
 }
 
 /* Mercury */
 #mercury {
-    width: 10px; /* Adjust the width of the planet as needed */
-    height: 10px; /* Adjust the height of the planet as needed */
-    background-color: rgb(190, 190, 190); /* Adjust the color of the planet as needed */
-    margin-right: 90px; /* Gap */
+    width: 10px;
+    /* Adjust the width of the planet as needed */
+    height: 10px;
+    /* Adjust the height of the planet as needed */
+    background-color: rgb(190, 190, 190);
+    /* Adjust the color of the planet as needed */
+    margin-right: calc(var(--gap) + 0px);
+    /* Gap */
 }
 
 /* Venus */
 #venus {
-    width: 20px; /* Adjust the width of the planet as needed */
-    height: 20px; /* Adjust the height of the planet as needed */
-    background-color: rgb(223, 189, 255); /* Adjust the color of the planet as needed */
-    margin-right: 100px; /* Gap */
+    width: 20px;
+    /* Adjust the width of the planet as needed */
+    height: 20px;
+    /* Adjust the height of the planet as needed */
+    background-color: rgb(223, 189, 255);
+    /* Adjust the color of the planet as needed */
+    margin-right: calc(var(--gap) + 0px);
+    /* Gap */
 }
 
 /* Earth */
 #earth {
-    width: 25px; /* Adjust the width of the planet as needed */
-    height: 25px; /* Adjust the height of the planet as needed */
-    background-color: rgb(29, 255, 255); /* Adjust the color of the planet as needed */
-    margin-right: 90px; /* Gap */
+    width: 25px;
+    /* Adjust the width of the planet as needed */
+    height: 25px;
+    /* Adjust the height of the planet as needed */
+    background-color: rgb(29, 255, 255);
+    /* Adjust the color of the planet as needed */
+    margin-right: calc(var(--gap) + 0px);
+    /* Gap */
 }
 
 /* Mars */
 #mars {
-    width: 10px; /* Adjust the width of the planet as needed */
-    height: 10px; /* Adjust the height of the planet as needed */
-    background-color: rgb(255, 0, 0); /* Adjust the color of the planet as needed */
-    margin-right: 80px; /* Gap */
+    width: 10px;
+    /* Adjust the width of the planet as needed */
+    height: 10px;
+    /* Adjust the height of the planet as needed */
+    background-color: rgb(255, 0, 0);
+    /* Adjust the color of the planet as needed */
+    margin-right: calc(var(--gap) + 0px);
+    /* Gap */
 }
 
 /* Jupiter */
 #jupiter {
-    width: 100px; /* Adjust the width of the planet as needed */
-    height: 100px; /* Adjust the height of the planet as needed */
-    background-color: rgb(255, 123, 0); /* Adjust the color of the planet as needed */
-    margin-right: 110px; /* Gap */
+    width: 100px;
+    /* Adjust the width of the planet as needed */
+    height: 100px;
+    /* Adjust the height of the planet as needed */
+    background-color: rgb(255, 123, 0);
+    /* Adjust the color of the planet as needed */
+    margin-right: calc(var(--gap) + 20px);
+    /* Gap */
 }
 
 /* Saturn */
 #saturn {
-    width: 75px; /* Adjust the width of the planet as needed */
-    height: 75px; /* Adjust the height of the planet as needed */
-    background-color: rgb(214, 182, 0); /* Adjust the color of the planet as needed */
-    margin-right: 100px; /* Gap */
+    width: 75px;
+    /* Adjust the width of the planet as needed */
+    height: 75px;
+    /* Adjust the height of the planet as needed */
+    background-color: rgb(214, 182, 0);
+    /* Adjust the color of the planet as needed */
+    margin-right: calc(var(--gap) + 20px);
+    /* Gap */
 }
 
 /* Uranus */
 #uranus {
-    width: 45px; /* Adjust the width of the planet as needed */
-    height: 45px; /* Adjust the height of the planet as needed */
-    background-color: rgb(0, 162, 255); /* Adjust the color of the planet as needed */
-    margin-right: 100px; /* Gap */
+    width: 45px;
+    /* Adjust the width of the planet as needed */
+    height: 45px;
+    /* Adjust the height of the planet as needed */
+    background-color: rgb(0, 162, 255);
+    /* Adjust the color of the planet as needed */
+    margin-right: calc(var(--gap) + 10px);
+    /* Gap */
 }
 
 /* Neptune */
 #neptune {
-    width: 45px; /* Adjust the width of the planet as needed */
-    height: 45px; /* Adjust the height of the planet as needed */
-    background-color: rgb(0, 105, 204); /* Adjust the color of the planet as needed */
-    margin-right: 100px; /* Gap */
+    width: 45px;
+    /* Adjust the width of the planet as needed */
+    height: 45px;
+    /* Adjust the height of the planet as needed */
+    background-color: rgb(0, 105, 204);
+    /* Adjust the color of the planet as needed */
+    margin-right: calc(var(--gap) + 10px);
+    /* Gap */
+}
+
+/* Pop-up window */
+
+.selected-planet {
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, #00249b, #300088 40%);
+}
+
+.selected-planet--open {
+    display: block;
+}
+
+/* Info */
+
+.selected-planet__info {
+    max-width: 640px;
+    margin: 0 auto;
+}
+
+.selected-planet__name {
+    font-size: 64px;
+    margin-bottom: 0px;
+}
+
+.selected-planet__latinname {
+    font-size: 32px;
+    font-weight: 100;
+    color: gold;
+    margin-top: 10px;
+    margin-bottom: 32px;
+}
+
+.selected-planet__description {
+    font-size: 16px;
+}
+
+.selected-planet__info h5 {
+    font-size: 20px;
+}
+
+.selected-planet__info h3,
+h4,
+h5,
+p {
+    color: white;
+}
+
+/* Info box for circumference, distance, temperature */
+
+.selected-planet__info-box {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    /* Make line between sections transparent */
+    border-bottom: 1px solid rgba(204, 204, 204, 0.2);
+    border-top: 1px solid rgba(204, 204, 204, 0.2);
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+
+.selected-planet__info-box>div {
+    flex-basis: 48%;
+    margin-bottom: 10px;
+}
+
+.selected-planet__info-box h5,
+.selected-planet__info-box p {
+    margin: 0;
+}
+
+/* Moons */
+
+.selected-planet_moonsheader {
+    margin-bottom: 0px;
 }
