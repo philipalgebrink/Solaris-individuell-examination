@@ -97,8 +97,6 @@ header h2 {
     /* Gap between sun and planet after */
 }
 
-/* TO DO!!!! Position them nicely, try to get jupiter in the middle */
-
 /* Style for other planets */
 .planet {
     border-radius: 50%;
@@ -168,14 +166,26 @@ header h2 {
 
 /* Saturn */
 #Saturnus {
+    position: relative;
     width: 75px;
-    /* Adjust the width of the planet as needed */
     height: 75px;
-    /* Adjust the height of the planet as needed */
     background-color: rgb(214, 182, 0);
-    /* Adjust the color of the planet as needed */
     margin-right: calc(var(--gap) + 20px);
-    /* Gap */
+}
+
+/* Add "ring" to Saturnus */
+#Saturnus .diagonal-line {
+    position: absolute;
+    width: 150%;
+    /* Adjust the width to make it extend outside */
+    height: 2px;
+    background-color: rgba(255, 255, 255, 0.7);
+    /* Make ring transparent */
+    transform: rotate(-35deg);
+    transform-origin: center;
+    top: 50%;
+    left: -25%;
+    /* Adjust the left position to center the line */
 }
 
 /* Uranus */

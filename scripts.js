@@ -134,22 +134,26 @@ document.addEventListener("DOMContentLoaded", function () {
 
     planets.forEach(planet => {
         const planetName = planet.id;
+        let tooltip;
 
         planet.addEventListener("mouseover", function (event) {
-            const tooltip = document.createElement("div");
-            tooltip.className = "planet-tooltip";
-            tooltip.textContent = planetName;
+            if (event.target === planet) {
+                tooltip = document.createElement("div");
+                tooltip.className = "planet-tooltip";
+                tooltip.textContent = planetName;
 
-            /* Position the tooltip directly on the cursor */
-            tooltip.style.top = event.clientY + "px";
-            tooltip.style.left = event.clientX + "px";
+                /* Position the tooltip directly on the cursor */
+                tooltip.style.top = event.clientY + "px";
+                tooltip.style.left = event.clientX + "px";
 
-            document.body.appendChild(tooltip);
+                document.body.appendChild(tooltip);
+            }
+        });
 
-            /* Add an event listener to remove the tooltip when the mouse leaves the planet, it never disappared before when hovering on new planet */
-            planet.addEventListener("mouseout", function () {
+        planet.addEventListener("mouseout", function () {
+            if (tooltip && tooltip.parentElement === document.body) {
                 document.body.removeChild(tooltip);
-            });
+            }
         });
     });
 });
