@@ -14,7 +14,7 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background: linear-gradient(to right, #ff8c00, #000a2b 40%);
+    background: linear-gradient(to right, #003449, #000a2b 40%);
     /* Make nice gradient background */
     display: flex;
     flex-direction: column;
